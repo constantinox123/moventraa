@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const qrContainer = document.getElementById("qrcode");
     const payBtn = document.getElementById("payBtn");
     const registerBtn = document.getElementById("registerBtn");
+    const downloadBtn = document.getElementById("downloadQR");
 
     let records = JSON.parse(localStorage.getItem("records")) || [];
     let paymentCompleted = false;
@@ -80,11 +81,31 @@ document.addEventListener("DOMContentLoaded", function() {
             height: 200
         });
 
+        document.getElementById("downloadQR").style.display = "block";
+
         form.reset();
         paymentCompleted = false;
         registerBtn.disabled = true;
 
         showAlert("Vehicle Registered Successfully!");
+    });
+
+        // 📥 DOWNLOAD DO QR CODE
+    downloadBtn.addEventListener("click", function() {
+
+        const canvas = qrContainer.querySelector("canvas");
+
+        if (!canvas) {
+            showAlert("QR Code not generated yet.");
+            return;
+        }
+
+        const imageURL = canvas.toDataURL("image/png");
+
+        const link = document.createElement("a");
+        link.href = imageURL;
+        link.download = JSON.parse(localStorage.getItem("records")).slice(-1)[0].plate + "_QR.png";
+        link.click();
     });
 
 });
