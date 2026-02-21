@@ -283,3 +283,29 @@ button {
         font-size: 14px;
     }
 }
+
+/* DOWNLOAD BUTTON */
+#downloadQR {
+    display: none;
+    margin-top: 15px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(135deg, #1f3c88, #39a0ed);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+#downloadQR:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+#downloadQR:active {
+    transform: scale(0.98);
+}
