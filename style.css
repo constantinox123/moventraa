@@ -1,0 +1,252 @@
+@font-face {
+    font-family: 'Nexa';
+    src: url('./fonts/Nexa-Regular.woff') format('woff');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('./fonts/Nexa-Bold.woff') format('woff');
+    font-weight: bold;
+}
+
+/* Aplica a fonte em todo o site */
+* {
+    font-family: 'Nexa', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nexa', sans-serif;
+}
+
+body {
+    background: linear-gradient(-45deg, #1f3c88, #39a0ed, #1f3c88, #2b5876);
+    background-size: 400% 400%;
+    animation: waterGradient 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 🌊 Animação tipo água */
+@keyframes waterGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    width: 380px;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-4px);
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #1f3c88;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    margin-bottom: 18px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 08px;
+    border: none;
+    background: #e6eef9;
+   
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.tab-btn.active {
+    background: #1f3c88;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 1px solid #d0d7e2;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #39a0ed;
+    box-shadow: 0 0 8px rgba(57,160,237,0.3);
+    outline: none;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    background: linear-gradient(135deg, #1f3c88, #39a0ed);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.03);
+}
+
+.output {
+    margin-top: 18px;
+    text-align: center;
+}
+
+#generatedCode {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #1f3c88;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: #f2f6fc;
+    padding: 8px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+/* Fundo escuro */
+.custom-alert {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+
+/* Caixa principal */
+.alert-box {
+    background: #1f1f1f;
+    color: white;
+    padding: 25px 30px;
+    border-radius: 18px; /* 🔥 bordas arredondadas */
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Botão */
+.alert-box button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #4da6ff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.alert-box button:hover {
+    background: #1a8cff;
+}
+
+#qrcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Animação */
+@keyframes fadeIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+form label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: block;
+    color: #1f3c88;
+}
+
+form .required {
+    color: red;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px; /* aumenta o espaço entre os inputs */
+    border-radius: 10px;
+    border: 1px solid #d0d7e2;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+/* Botão de Pagamento */
+#payBtn {
+    padding: 10px;
+    background: #f2f2f2;
+    color: #1f3c88;
+    border: 2px solid #1f3c88;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+#payBtn:hover {
+    background: #1f3c88;
+    color: white;
+}
+
+/* Quando botão Generate estiver bloqueado */
+#registerBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

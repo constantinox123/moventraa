@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Car Access System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>MOVENTRA</h1>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'register')">REGISTER-VEICLE </button>
+    </div>
+
+    <!-- REGISTER TAB -->
+    <div id="register" class="tab-content active">
+        <form id="registrationForm">
+    <label for="name">Full Name <span class="required"> </span></label>
+    <input type="text" id="name" placeholder="">
+
+    <label for="studentId">Student/Staff Number <span class="required"></span></label>
+    <input type="text" id="studentId" placeholder="">
+
+    <label for="phone">Phone Number <span class="required"></span></label>
+    <input type="tel" id="phone" placeholder="" pattern="[0-9]{7,15}" title="">
+
+    <label for="plate">Car Plate Number <span class="required"></span></label>
+    <input type="text" id="plate" placeholder="">
+
+    <button type="button" id="payBtn">Pay Registration Fee</button>
+<button type="submit" id="registerBtn" disabled>Generate Access</button>
+</form>
+
+        <div class="output">
+            <h3 id="generatedCode"></h3>
+            <div id="qrcode"></div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- CUSTOM ALERT -->
+<div id="customAlert" class="custom-alert">
+    <div class="alert-box">
+        <p id="alertMessage"></p>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+</div>
+
+
+<script src="script.js?v=2"></script>
+</body>
+</html>
