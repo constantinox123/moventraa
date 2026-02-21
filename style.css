@@ -60,6 +60,7 @@ h1 {
     margin-bottom: 20px;
     letter-spacing: 01px;
     color: #1f3c88;
+    margin-bottom: 0%;
 }
 
 /* Tabs */
@@ -250,3 +251,4 @@ input {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
